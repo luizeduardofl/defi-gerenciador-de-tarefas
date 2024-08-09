@@ -23,14 +23,11 @@ Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-E
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário.
 - **Material-UI (MUI)**: Biblioteca de componentes React para estilização da aplicação.
 - **React Router**: Biblioteca para gerenciamento de rotas em uma aplicação React.
-- **JSON Server**: Ferramenta para criar uma API REST fake rapidamente, usada para persistência de dados.
-- **Git**: Controle de versão.
-- **GitHub**: Repositório para armazenamento do código-fonte e colaboração.
+- **JSON Server**: Ferramenta para simular uma API REST rapidamente, usada para persistência de dados.
 
 ## Requisitos
-
-- Node.js instalado na máquina.
 - npm (gerenciador de pacotes do Node.js).
+- MUI, React Router, JSON Server instalados.
 - Git para controle de versão.
 
 ## Instalação
@@ -39,3 +36,72 @@ Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-E
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    cd seu-repositorio
+   ```
+
+2. **Instale as dependências do projeto:**
+   - Certifique-se de estar na raiz do diretório do projeto (onde está localizado o arquivo `package.json`). Em seguida, execute:
+   ```bash
+   npm install
+   ```
+   - Este comando instala todas as dependências listadas no `package.json`, incluindo React, React Router, Material-UI e outras bibliotecas necessárias.
+
+3. **Instale e configure o React Router:**
+   - O React Router já deve estar incluído nas dependências instaladas pelo comando anterior. Caso precise instalá-lo manualmente, execute:
+   ```bash
+   npm install react-router-dom
+   ```
+   - Em seguida, verifique se as rotas estão corretamente configuradas no seu projeto. Por exemplo, no arquivo `App.js` ou outro responsável pelas rotas:
+   ```javascript
+   import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+   import PaginaPrincipal from './components/PaginaPrincipal';
+   // Outras importações
+
+   function App() {
+     return (
+       <Router>
+         <Switch>
+           <Route path="/" exact component={PaginaPrincipal} />
+           {/* Adicione outras rotas conforme necessário */}
+         </Switch>
+       </Router>
+     );
+   }
+
+   export default App;
+   ```
+
+4. **Instale e configure o Material-UI:**
+   - Material-UI (MUI) já deve estar instalado, mas caso precise instalá-lo manualmente, execute:
+   ```bash
+   npm install @mui/material @emotion/react @emotion/styled
+   ```
+   - Para utilizar os componentes do Material-UI, importe-os nos seus componentes React. Por exemplo:
+   ```javascript
+   import { Button, Container } from '@mui/material';
+
+   function MeuComponente() {
+     return (
+       <Container>
+         <Button variant="contained" color="primary">
+           Meu Botão
+         </Button>
+       </Container>
+     );
+   }
+
+   export default MeuComponente;
+   ```
+
+5. **Inicie o JSON Server para simular o back-end:**
+   - O JSON Server deve ser configurado para simular uma API RESTful. Verifique se o arquivo `db.json` está na raiz do projeto e execute:
+   ```bash
+   npx json-server --watch db.json --port 3001
+   ```
+   - Isso iniciará o JSON Server e ele ficará disponível em `http://localhost:3001`. Ele será usado para armazenar as tarefas e permitir as operações de CRUD (Criar, Ler, Atualizar, Deletar).
+
+6. **Inicie o servidor de desenvolvimento do React:**
+   - Finalmente, para iniciar a aplicação React, execute:
+   ```bash
+   npm start
+   ```
+   - O aplicativo será aberto automaticamente no navegador em `http://localhost:3000`.
