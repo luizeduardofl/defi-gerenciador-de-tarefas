@@ -2,13 +2,11 @@
 
 ## Descrição
 
-O Defi consiste numa aplicação de **gerenciamento de tarefas** desenvolvido com **React**. Ele permite que os usuários adicionem, editem e excluam tarefas, as quais podem ter três categorias: **A Fazer** (todo), **Em Progresso** (inProgress) e **Concluído** (done).
+O Defi é uma aplicação de **gerenciamento de tarefas** desenvolvida com **React**. Ele permite aos usuários adicionar, editar e excluir tarefas, organizadas em três categorias: **A Fazer** (todo), **Em Progresso** (inProgress) e **Concluído** (done).
 
-O projeto foi criado com o objetivo de proporcionar uma interface intuitiva e simples para gerenciar tarefas, facilitando o acompanhamento do progresso de diferentes atividades. A aplicação é um exemplo prático de como usar React para criar uma aplicação CRUD (Create, Read, Update, Delete) e como integrar essa aplicação com um back-end simulado usando JSON Server.
+O projeto foi criado com o objetivo de proporcionar uma interface intuitiva e simples para gerenciar tarefas, facilitando o acompanhamento do progresso das atividades. É um exemplo prático de como usar React para criar uma aplicação CRUD (Create, Read, Update, Delete) e como integrar essa aplicação com um back-end simulado usando JSON Server.
 
-Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-End" ministrada pelo professor Diego Rodrigo Cabral Silva no semestre 2024.1 da UFRN. Feita por Luiz Eduardo Fernandes Lobato, aluno da Escola de Ciências e Tecnologia (ECT).
-
-
+Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-End", ministrada pelo professor Diego Rodrigo Cabral Silva no semestre 2024.1 da UFRN. Feita por Luiz Eduardo Fernandes Lobato, aluno da Escola de Ciências e Tecnologia (ECT).
 
 ## Funcionalidades
 
@@ -21,16 +19,52 @@ Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-E
 ## Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Material-UI (MUI)**: Biblioteca de componentes React para estilização da aplicação.
-- **React Router**: Biblioteca para gerenciamento de rotas em uma aplicação React.
-- **JSON Server**: Ferramenta para simular uma API REST rapidamente, usada para persistência de dados.
+- **Material-UI (MUI)**: Biblioteca de componentes React para estilização.
+- **React Router**: Biblioteca para gerenciamento de rotas.
+- **JSON Server**: Ferramenta para simular uma API RESTful.
 
 ## Requisitos
-- npm (gerenciador de pacotes do Node.js).
-- MUI, React Router, JSON Server instalados.
-- Git para controle de versão.
+- npm (gerenciador de pacotes do Node.js)
+- MUI, React Router, JSON Server instalados
+- Git para controle de versão
 
-## Instalação
+---
+
+# Defi: the task manager
+
+## Description
+
+Defi is a **task management** application built with **React**. It allows users to add, edit, and delete tasks, which are organized into three categories: **To Do** (todo), **In Progress** (inProgress), and **Done** (done).
+
+The project was created to provide an intuitive and simple interface for managing tasks, making it easy to track the progress of different activities. The app serves as a practical example of how to use React to create a CRUD (Create, Read, Update, Delete) application and how to integrate it with a simulated back-end using JSON Server.
+
+This application was developed for the "Front-End Web Development" course taught by Professor Diego Rodrigo Cabral Silva in the 2024.1 semester at UFRN. It was created by Luiz Eduardo Fernandes Lobato, a student at the School of Science and Technology (ECT).
+
+## Features
+
+- **Add Tasks**: Allows users to create new tasks.
+- **View Tasks**: Tasks are organized and displayed in columns based on their status.
+- **Update Tasks**: Users can move tasks between statuses, such as from "To Do" to "In Progress" and from "In Progress" to "Done."
+- **Delete Tasks**: Users can remove unwanted tasks.
+- **Data Persistence**: Tasks are stored using JSON Server, simulating a RESTful API.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Material-UI (MUI)**: React component library for styling the app.
+- **React Router**: Library for route management in a React app.
+- **JSON Server**: Tool for quickly setting up a RESTful API simulation.
+
+## Requirements
+- npm (Node.js package manager)
+- MUI, React Router, JSON Server installed
+- Git for version control
+
+---
+
+## Instalação / Installation
+
+### Português
 
 1. **Clone o repositório:**
    ```bash
@@ -39,69 +73,61 @@ Esta aplicação foi desenvolvida para a disciplina "Desenvolvimento Web Front-E
    ```
 
 2. **Instale as dependências do projeto:**
-   - Certifique-se de estar na raiz do diretório do projeto (onde está localizado o arquivo `package.json`). Em seguida, execute:
    ```bash
    npm install
    ```
-   - Este comando instala todas as dependências listadas no `package.json`, incluindo React, React Router, Material-UI e outras bibliotecas necessárias.
 
-3. **Instale e configure o React Router:**
-   - O React Router já deve estar incluído nas dependências instaladas pelo comando anterior. Caso precise instalá-lo manualmente, execute:
+3. **Configure o React Router:**
    ```bash
    npm install react-router-dom
    ```
-   - Em seguida, verifique se as rotas estão corretamente configuradas no seu projeto. Por exemplo, no arquivo `App.js` ou outro responsável pelas rotas:
-   ```javascript
-   import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-   import PaginaPrincipal from './components/PaginaPrincipal';
-   // Outras importações
+   Verifique se as rotas estão corretamente configuradas.
 
-   function App() {
-     return (
-       <Router>
-         <Switch>
-           <Route path="/" exact component={PaginaPrincipal} />
-           {/* Adicione outras rotas conforme necessário */}
-         </Switch>
-       </Router>
-     );
-   }
-
-   export default App;
-   ```
-
-4. **Instale e configure o Material-UI:**
-   - Material-UI (MUI) já deve estar instalado, mas caso precise instalá-lo manualmente, execute:
+4. **Configure o Material-UI:**
    ```bash
    npm install @mui/material @emotion/react @emotion/styled
    ```
-   - Para utilizar os componentes do Material-UI, importe-os nos seus componentes React. Por exemplo:
-   ```javascript
-   import { Button, Container } from '@mui/material';
 
-   function MeuComponente() {
-     return (
-       <Container>
-         <Button variant="contained" color="primary">
-           Meu Botão
-         </Button>
-       </Container>
-     );
-   }
-
-   export default MeuComponente;
-   ```
-
-5. **Inicie o JSON Server para simular o back-end:**
-   - O JSON Server deve ser configurado para simular uma API RESTful. Verifique se o arquivo `db.json` está na raiz do projeto e execute:
+5. **Inicie o JSON Server:**
    ```bash
    npx json-server --watch db.json --port 3001
    ```
-   - Isso iniciará o JSON Server e ele ficará disponível em `http://localhost:3001`. Ele será usado para armazenar as tarefas e permitir as operações de CRUD (Criar, Ler, Atualizar, Deletar).
 
-6. **Inicie o servidor de desenvolvimento do React:**
-   - Finalmente, para iniciar a aplicação React, execute:
+6. **Inicie o servidor de desenvolvimento:**
    ```bash
    npm start
    ```
-   - O aplicativo será aberto automaticamente no navegador em `http://localhost:3000`.
+
+### English
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. **Install project dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up React Router:**
+   ```bash
+   npm install react-router-dom
+   ```
+   Ensure routes are correctly configured.
+
+4. **Set up Material-UI:**
+   ```bash
+   npm install @mui/material @emotion/react @emotion/styled
+   ```
+
+5. **Start the JSON Server:**
+   ```bash
+   npx json-server --watch db.json --port 3001
+   ```
+
+6. **Start the development server:**
+   ```bash
+   npm start
+   ```
